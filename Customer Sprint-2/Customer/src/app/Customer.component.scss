@@ -1,0 +1,185 @@
+//* ===== Background Setup ===== */
+.customer-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('assets/images/background.jpg') center/cover no-repeat fixed;
+  background-size: cover;                  /* Fill entire area */
+  background-position: center;  
+  color: #fff;
+  overflow-x: hidden;
+  padding: 40px 0;
+  animation: fadeInPage 1.5s ease-in;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+/* ===== Form Section ===== */
+.form-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.form-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #f8f8f8;
+}
+
+/* ===== Input Fields ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-edit,
+.btn-delete {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px rgba(255,255,255,0.4); }
+  100% { box-shadow: 0 0 15px rgba(255,255,255,0.7); }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.5);
+}
+
+.btn-edit {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #2980b9;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* ===== Table Styling ===== */
+.table-section {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  margin: auto;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.styled-table th {
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Modal ===== */
+.glass-modal {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  border-radius: 15px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .form-container {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    font-size: 14px;
+  }
+}
